@@ -46,6 +46,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Add gem for user authorization
 gem 'devise'
 
+# Add figaro to handle sensitive data
+gem 'figaro', '1.0'
+
 
 
 group :development, :test do
