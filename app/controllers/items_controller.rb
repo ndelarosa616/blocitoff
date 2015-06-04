@@ -1,9 +1,14 @@
 class ItemsController < ApplicationController
+  def new
+    @item = Item.new
+  end
+
   def create
     @item = Item.new(item_params)
 
     if @item.save
-      redirect_to users_show_path
+      flash[:notice] = "Your item was saved"
+      redirect_to root_path
     else
       flash[:error] = "Error saving ToDo - please try again."
       redirect_to item_create_path
