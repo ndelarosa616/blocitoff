@@ -1,10 +1,9 @@
 class ItemsController < ApplicationController
-  def new
-    @item = Item.new
-  end
+  #todo - ajax create and destroy
 
   def create
     @item = Item.new(item_params)
+    @item.user = current_user
 
     if @item.save
       flash[:notice] = "Your item was saved"

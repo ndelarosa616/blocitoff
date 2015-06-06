@@ -8,7 +8,8 @@ feature 'Project manager creates TODO' do
   end
 
   scenario 'Successfully' do
-    user = authenticated_user
+    user = @user
     visit user_items_path(user)
+    fill_in 'item', with: @item.name
   end  
 end
