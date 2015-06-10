@@ -8,10 +8,12 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "Your item was saved"
-      redirect_to root_path
     else
       flash[:error] = "Error saving ToDo - please try again."
-      redirect_to item_create_path
+    end
+
+    respond_with(@item) do |format|
+      format.html{ redirect_to root_path}
     end
   end
 
@@ -25,7 +27,7 @@ class ItemsController < ApplicationController
     end
 
     respond_with(@item) do |format|
-      format.html{ redirect_to [current_user, @item] }
+      format.html{ redirect_to root_path }
     end
   end
 

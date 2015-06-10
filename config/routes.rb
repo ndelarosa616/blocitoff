@@ -2,7 +2,7 @@ Rails.application.routes.draw do
  
   devise_for :users
   resources :users, only: [:update, :show] do
-    resources :items, only: [:create, :show, :destroy]
+    resources :items, only: [:create, :destroy]
   end
 
   authenticated :user do
