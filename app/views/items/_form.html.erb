@@ -1,6 +1,6 @@
 <h4>Create a new item</h4>
 <% if current_user %>
-  <%= form_for [@user, @user.items.new] do |f| %>
+  <%= form_for [@user, @user.items.new], remote: true do |f| %>
     <div class="form-group col-md-8">
       <%= f.label "Add your to-do item" %>
       <%= f.text_field :name, class: 'form-control', placeholder: "Enter a Todo" %>

@@ -2,7 +2,7 @@
   <div class="col-md-8">
       <%= render partial: 'items/form' %>
     <div class="row">
-        <table class="table table-bordered table-hover">
+      <table class="table table-bordered table-hover">
         <thead>
           <tr>
             <th>To-Do Item</th>
@@ -10,7 +10,7 @@
             <th>Mark Complete</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="js-items">
           <%= render partial: 'items/item', collection: @items %>
         </tbody>
       <table>

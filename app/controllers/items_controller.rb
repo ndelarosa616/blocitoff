@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   respond_to :html, :js
 
   def create
+    @user = current_user
     @item = Item.new(item_params)
     @item.user = current_user
 
