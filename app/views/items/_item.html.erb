@@ -4,7 +4,7 @@
       <tr>
         <td><%= item.name %></td>
         <td><%= item.days_left %> days left</td>
-        <td><%= link_to "", [current_user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></td>
+        <td><%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok' %></td>
       </tr>
     </div>
   <% end %>
