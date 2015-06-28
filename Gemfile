@@ -69,6 +69,7 @@ group :development, :test do
   # Add rspec and capybara for testing
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
-
+  # Add a gem for serializers
+  gem 'active_model_serializers'
 end
 
