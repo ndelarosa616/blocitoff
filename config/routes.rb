@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   unauthenticated do
     root to: 'welcome#index'
   end
+
+  namespace :api, defaults: { format: :json } do
+    resources :users
+  end
 end

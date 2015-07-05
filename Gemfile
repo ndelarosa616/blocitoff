@@ -71,5 +71,7 @@ group :development, :test do
   gem 'capybara'
   # Add a gem for serializers
   gem 'active_model_serializers'
+  # Add a gem for auth tokens
+  gem 'devise-token_authenticatable'
 end
 
