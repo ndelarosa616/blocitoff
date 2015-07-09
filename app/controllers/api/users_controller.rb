@@ -1,5 +1,5 @@
 class Api::UsersController < ApiController
-  skip_before_action :authenticate, only: :create
+  skip_before_action :authenticate, only: [:create, :destroy]
 
   def index
     users = User.all 
@@ -13,6 +13,16 @@ class Api::UsersController < ApiController
       render json: user
     else
       render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    begin
+      user = User.find(params[:id])
+      user.destroy
+      render json: {}, status: :no_content
+    rescue ActiveRecord::RecordNotFound
+      render :json => {}, :status => :not_found
     end
   end
 
