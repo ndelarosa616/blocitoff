@@ -1,6 +1,7 @@
 class ApiController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate
+  attr_reader :current_user
    
   private
   def authenticate
