@@ -14,8 +14,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: { format: :json } do
-    resources :users do
-      resources :items
-    end
+    resources :users 
+    resources :items
   end
 end

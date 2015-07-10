@@ -1,8 +1,8 @@
 class Api::ItemsController < ApiController
-  skip_before_action :authenticate, only: [:create, :destroy, :update]
 
   def create
     item = Item.new(item_params)
+    item.user = @current_user
 
     if item.save
       render json: item
@@ -33,6 +33,6 @@ class Api::ItemsController < ApiController
   private
 
   def item_params
-    params.require(:item).permit(:name, :user_id)
+    params.require(:item).permit(:name)
   end
 end

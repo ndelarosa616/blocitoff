@@ -6,7 +6,7 @@ class ApiController < ApplicationController
   private
   def authenticate
     authenticate_or_request_with_http_token do |token, options|
-      User.find_by(authentication_token: token)
+      @current_user = User.find_by(authentication_token: token)
     end
   end
 end
